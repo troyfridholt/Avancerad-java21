@@ -43,9 +43,7 @@ public class Weather {
         this.connection = new Connection(cityName);
     }
 
-    /**
-     * Depending on the specified city, it connects to the url address and downloads information about the current weather.
-     */
+    
     public void connectToUrlAndGetStrings() {
         try {
             StringBuilder result = new StringBuilder();
@@ -65,11 +63,7 @@ public class Weather {
         }
     }
 
-    /**
-     * All downloaded values are saved to variables.
-     *
-     * @param result Downloaded values from URL address.
-     */
+  
     private void jSonToVariables(StringBuilder result) {
         String jsonString = result.toString();
         JSONObject jsonObject = new JSONObject(jsonString);
@@ -96,12 +90,7 @@ public class Weather {
         }
     }
 
-    /**
-     * Conversion of temperature in Kelvin to degrees Celsius.
-     *
-     * @param value Entered value in Kelvin.
-     * @return Converted temperature in Celsius.
-     */
+  
     public double kelvinToCelsius(double value) {
         value = value - 273.15;
         return value;
